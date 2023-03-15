@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Add a Task:</h2>
+    
+    <form action="/add" method="post">
+        {{form.taskname.label}}
+        {{form.taskname()}}
+        <br>
+        {{form.taskcontent.label}}
+        {{form.taskcontent()}}
+        <br>
+        {{form.duedate.label}}
+        {{form.duedate()}}
+        <br>
+        {{form.submit()}}
+    </form>
+    <h2>Current Tasks:</h2>
+    
+    <div class="container">
+        <div class="row" style="padding:50px">
+        
+            <table width="100%">
+                <tr>
+                    <th width="10%">Done</th>
+                    <th width="20%">Task</th>
+                    <th width="50%">Description</th>
+                    <th width="15%">Due Date</th>
+                    <td width="5%" style="color:white"><i class="fa-solid fa-trash"></i></td>
+
+                </tr>
+                {% for task in tasks %}
+                <tr>
+                    <td>
+                        <button type="button" class ='compedit' value="{{task['complete']}}" id="complete_{{task['id']}}"><i class="fa-solid fa-check"></i></button>
+    
+                        
+                    </td>
+                    <td>
+                        <div class="edit">{{task['title']}}</div>
+                        <input type='text' class='txtedit' value="{{task['title']}}" id="title_{{task['id']}}" >
+                    </td>
+                    <td>
+                        <div class="edit">{{task['content']}}</div>
+                        <input type='text' class='txtedit' value="{{task['content']}}" id="content_{{task['id']}}" >
+                    </td>
+                    <td>
+                        <div class="edit">{{task['duedate']}}</div>
+                        <input type='date' class='txtedit' value="{{task['duedate']}}" id="duedate_{{task['id']}}" >
+                    </td>
+                    <td><i class="fa-solid fa-ban deletebtn" id="{{task['id']}}"></i></td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+    </div>
+
+{% endblock %}

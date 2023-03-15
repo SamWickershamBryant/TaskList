@@ -1,0 +1,62 @@
+h1 {
+    color:red;
+}
+.deletetask {
+    cursor:pointer;
+}
+
+.delete {
+    text-decoration: line-through;
+    background-color: red;
+    
+}
+
+.completetask {
+    cursor:pointer;
+}
+
+.complete1 {
+    background-color: green;
+}
+
+.edit{
+    width: 100%;
+    height: 25px;
+   }
+.editMode{
+border: 1px solid black;
+}
+table {
+border:3px solid lavender;
+border-radius:3px;
+}
+table tr:nth-child(1){
+background-color:#4285f4;
+}
+table tr:nth-child(1) th{
+color:white;
+padding:10px 0px;
+letter-spacing: 1px;
+}
+table td{
+padding:10px;
+}
+table tr:nth-child(even){
+background-color:lavender;
+color:black;
+}
+.txtedit{
+display: none;
+width: 99%;
+height: 30px;
+}
+.compedit[value="1"]{
+    color:green;
+}
+.compedit[value="0"]{
+    color:red;
+}
+.deletebtn{
+    color:red;
+    cursor:pointer;
+}

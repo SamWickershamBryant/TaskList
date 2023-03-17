@@ -3,6 +3,7 @@
     <h2>Add a Task:</h2>
     
     <form action="/add" method="post">
+        {{ form.hidden_tag() }}
         {{form.taskname.label}}
         {{form.taskname()}}
         <br>
@@ -31,7 +32,7 @@
                 {% for task in tasks %}
                 <tr>
                     <td>
-                        <button type="button" class ='compedit' value="{{task['complete']}}" id="complete_{{task['id']}}"><i class="fa-solid fa-check"></i></button>
+                        <button type="button" class ='compedit' value="{{ task['complete']|int }}" id="complete_{{ task['id'] }}"><i class="fa-solid fa-check"></i></button>
     
                         
                     </td>
